@@ -16,7 +16,8 @@ You can use this module in two different scenarios:
 ## DNA_Evaluation.vhd:
 This module instatiates the DNA_Extractor module, will utilize it to access the current FPGA DNA number, and compares it to some user defined valid DNA.
 If the extracted DNA value matches one of the user defined ones, the #enable output pin of the module becomes HIGH.
-You can simply use this #enable pin in your Top-Level design to control as a general enable(disable) mechanism.
+You can simply use this #enable pin in your Top-Level design as a general enable(disable) mechanism.
+Thus, if your design is cloned by a non-authorized user, and the user wants to program it on a different FPGA of the same family, since the DNA values does not match, the logic will not be enabled that new FPGA.
 
 
 
